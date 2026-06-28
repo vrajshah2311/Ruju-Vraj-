@@ -1,0 +1,74 @@
+.sched__title {
+  font-size: clamp(44px, 7vw, 60px);
+  color: #000;
+  margin-bottom: clamp(32px, 5vw, 60px);
+}
+
+/* Day tabs */
+.sched__days {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+.sched__day {
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.sched__day-label {
+  font-family: var(--serif);
+  font-size: clamp(24px, 4vw, 32px);
+  color: var(--ink-soft);
+  opacity: 0.5;
+  transition: opacity 0.18s ease;
+}
+.sched__day:hover .sched__day-label {
+  opacity: 0.8;
+}
+.sched__day.is-active .sched__day-label {
+  opacity: 1;
+}
+.sched__day-rule {
+  height: 1px;
+  background: var(--ink-strong);
+}
+
+/* Timeline rows */
+.sched__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 80px);
+}
+.sched__row {
+  display: grid;
+  grid-template-columns: 184px 1fr;
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+}
+.sched__time {
+  font-size: clamp(20px, 3vw, 24px);
+  color: var(--ink-soft);
+  padding-top: 4px;
+}
+.sched__event {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sched__event-name {
+  font-size: clamp(26px, 4vw, 32px);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .sched__row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

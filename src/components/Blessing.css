@@ -1,0 +1,93 @@
+.bless__card {
+  background: var(--surface);
+  max-width: var(--maxw);
+  padding: clamp(40px, 8vw, 120px) clamp(24px, 6vw, 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(48px, 8vw, 80px);
+}
+
+.bless__mark {
+  font-family: var(--guj);
+  font-size: clamp(56px, 9vw, 96px);
+  line-height: 1;
+  color: var(--y-3);
+}
+
+.bless__messages {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 64px);
+  text-align: center;
+  max-width: 900px;
+}
+
+.bless__guj {
+  font-family: var(--guj);
+  font-size: clamp(20px, 2.6vw, 30px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.bless__en {
+  font-family: var(--inter);
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* Families */
+.bless__families {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 8vw, 80px);
+  border-top: 1px solid var(--hairline);
+  padding-top: clamp(40px, 6vw, 60px);
+}
+
+.bless__family {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.bless__family--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.bless__family-name {
+  font-family: var(--guj);
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+.bless__names {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bless__names li {
+  font-family: var(--guj);
+  font-size: clamp(16px, 2.2vw, 22px);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 700px) {
+  .bless__families {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bless__family,
+  .bless__family--right {
+    align-items: center;
+    text-align: center;
+  }
+}
