@@ -1,9 +1,13 @@
 import { useState } from "react";
+import SectionHeader from "./SectionHeader";
+import useReveal from "./useReveal";
 import "./Schedule.css";
 
 const DAYS = [
   {
-    label: "Friday, FEB 09",
+    short: "Fri",
+    date: "Feb 09",
+    label: "Friday, February 9",
     events: [
       {
         time: "10:00 AM",
@@ -18,7 +22,9 @@ const DAYS = [
     ],
   },
   {
-    label: "Saturday, FEB 10",
+    short: "Sat",
+    date: "Feb 10",
+    label: "Saturday, February 10",
     events: [
       {
         time: "9:00 AM",
@@ -33,7 +39,9 @@ const DAYS = [
     ],
   },
   {
-    label: "Sunday, FEB 11",
+    short: "Sun",
+    date: "Feb 11",
+    label: "Sunday, February 11",
     events: [
       {
         time: "11:00 AM",
@@ -52,13 +60,18 @@ const DAYS = [
 export default function Schedule() {
   const [day, setDay] = useState(0);
   const current = DAYS[day];
+  const ref = useReveal();
 
   return (
-    <section className="sched section" id="rsvp">
+    <section className="sched section section--surface" id="schedule" ref={ref}>
       <div className="container">
-        <h2 className="sched__title serif-display">Our days</h2>
+        <SectionHeader
+          eyebrow="The weekend"
+          title="Our days"
+          sub="Three days of celebration. Here's how the weekend unfolds."
+        />
 
-        <div className="sched__days" role="tablist" aria-label="Days">
+        <div className="sched__days reveal" role="tablist" aria-label="Days">
           {DAYS.map((d, i) => (
             <button
               key={d.label}
@@ -67,19 +80,22 @@ export default function Schedule() {
               className={`sched__day ${i === day ? "is-active" : ""}`}
               onClick={() => setDay(i)}
             >
-              <span className="sched__day-label">{d.label}</span>
-              {i === day && <span className="sched__day-rule" />}
+              <span className="sched__day-short">{d.short}</span>
+              <span className="sched__day-date">{d.date}</span>
             </button>
           ))}
         </div>
 
-        <div className="sched__list">
+        <div className="sched__list reveal" key={current.label}>
           {current.events.map((e) => (
             <div className="sched__row" key={e.name}>
-              <div className="sched__time serif-display">{e.time}</div>
+              <div className="sched__time">{e.time}</div>
+              <div className="sched__marker" aria-hidden="true">
+                <span className="sched__dot" />
+              </div>
               <div className="sched__event">
                 <h3 className="sched__event-name serif-display">{e.name}</h3>
-                <p className="sched__event-desc lead">{e.desc}</p>
+                <p className="sched__event-desc">{e.desc}</p>
               </div>
             </div>
           ))}

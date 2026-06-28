@@ -1,43 +1,62 @@
 .footer {
-  border-top: 1px solid var(--hairline);
-  background: var(--bg);
-  padding-block: 24px 32px;
+  background: var(--ink-strong);
+  color: rgba(255, 255, 255, 0.78);
+  padding-block: clamp(48px, 7vw, 80px);
 }
 
 .footer__inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  text-align: center;
   gap: 16px;
-  padding-block: 12px;
 }
 
-.footer__logo {
-  font-size: 24px;
+.footer__monogram {
+  font-size: clamp(34px, 6vw, 52px);
+  color: #fff;
+  line-height: 1;
+}
+.footer__monogram span {
+  font-style: italic;
+  color: var(--y-2);
+}
+
+.footer__date {
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink);
+  letter-spacing: 0.18em;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .footer__links {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 8px;
 }
 .footer__link {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: var(--ink);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
 }
 .footer__link:hover {
-  color: #000;
+  color: var(--y-2);
 }
 
-.footer__meta {
+.footer__rule {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
   margin-top: 12px;
-  color: var(--ink-muted);
-  font-size: 14px;
+}
+
+.footer__credit {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
 }

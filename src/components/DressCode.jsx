@@ -1,4 +1,6 @@
 import { useState } from "react";
+import SectionHeader from "./SectionHeader";
+import useReveal from "./useReveal";
 import "./DressCode.css";
 
 const EVENTS = [
@@ -55,17 +57,18 @@ const EVENTS = [
 export default function DressCode() {
   const [active, setActive] = useState(0);
   const ev = EVENTS[active];
+  const ref = useReveal();
 
   return (
-    <section className="dress section" id="contact">
+    <section className="dress section section--alt" id="attire" ref={ref}>
       <div className="container">
-        <div className="dress__head">
-          <p className="eyebrow">Dress code</p>
-          <h2 className="dress__title serif-display">What to wear</h2>
-          <p className="dress__blurb lead">{ev.blurb}</p>
-        </div>
+        <SectionHeader
+          eyebrow="Dress code"
+          title="What to wear"
+          sub="Each celebration has its own colour and mood. Pick an event to see the palette and a little inspiration."
+        />
 
-        <div className="dress__tabs" role="tablist" aria-label="Events">
+        <div className="dress__tabs reveal" role="tablist" aria-label="Events">
           {EVENTS.map((e, i) => (
             <button
               key={e.key}
@@ -79,28 +82,31 @@ export default function DressCode() {
           ))}
         </div>
 
-        <div className="dress__panel">
-          <h3 className="dress__panel-title serif-display">{ev.title}</h3>
-
-          <div className="dress__swatches">
-            {ev.palette.map((c) => (
-              <span
-                key={c}
-                className="dress__swatch"
-                style={{ background: c }}
-                title={c}
-              />
-            ))}
+        <div className="dress__panel reveal" key={ev.key}>
+          <div className="dress__panel-head">
+            <h3 className="dress__panel-title serif-display">{ev.title}</h3>
+            <div className="dress__swatches" aria-hidden="true">
+              {ev.palette.map((c) => (
+                <span
+                  key={c}
+                  className="dress__swatch"
+                  style={{ background: c }}
+                  title={c}
+                />
+              ))}
+            </div>
           </div>
 
           <div className="dress__gallery">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {Array.from({ length: 3 }).map((_, i) => (
               <img
                 key={i}
-                src={`https://placehold.co/327x398?text=${ev.name}+${i + 1}`}
+                src={`https://placehold.co/480x600?text=${encodeURIComponent(
+                  ev.name
+                )}+${i + 1}`}
                 alt={`${ev.name} inspiration ${i + 1}`}
-                width="327"
-                height="398"
+                width="480"
+                height="600"
                 loading="lazy"
               />
             ))}

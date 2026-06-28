@@ -1,21 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Navbar.css";
 
 const LINKS = [
+  { label: "Story", href: "#story" },
   { label: "Schedule", href: "#schedule" },
-  { label: "Venue", href: "#venue" },
-  { label: "Contact", href: "#contact" },
+  { label: "Attire", href: "#attire" },
   { label: "RSVP", href: "#rsvp" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="nav">
+    <header className={`nav ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav__inner container">
-        <a className="nav__logo serif-display" href="#top">
-          Ceremony
+        <a className="nav__logo" href="#top">
+          <span className="nav__monogram">R&amp;V</span>
+          <span className="nav__logo-text serif-display">Ceremony</span>
         </a>
 
         <nav className="nav__links" aria-label="Primary">
@@ -24,6 +33,9 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
+          <a className="btn btn--solid nav__cta" href="#rsvp">
+            RSVP
+          </a>
         </nav>
 
         <button
