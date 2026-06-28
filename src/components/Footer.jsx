@@ -1,9 +1,9 @@
 import "./Footer.css";
 
 const LINKS = [
-  { label: "Story", href: "#story" },
+  { label: "Invitation", href: "#top" },
   { label: "Schedule", href: "#schedule" },
-  { label: "Attire", href: "#attire" },
+  { label: "Venue", href: "#venue" },
   { label: "RSVP", href: "#rsvp" },
 ];
 
@@ -11,11 +11,9 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <div className="footer__monogram serif-display">
-          Ruju <span>&amp;</span> Vraj
-        </div>
-
-        <p className="footer__date">February 11, 2026 · Bangkok, Thailand</p>
+        <a className="footer__logo serif-display" href="#top">
+          Ceremony
+        </a>
 
         <nav className="footer__links" aria-label="Footer">
           {LINKS.map((l) => (
@@ -24,12 +22,10 @@ export default function Footer() {
             </a>
           ))}
         </nav>
+      </div>
 
-        <div className="footer__rule" aria-hidden="true" />
-
-        <p className="footer__credit">
-          Made with love for our family &amp; friends
-        </p>
+      <div className="container footer__meta">
+        <p>Ruju &amp; Vraj · February 11, 2026 · Thailand</p>
       </div>
     </footer>
   );

@@ -1,92 +1,50 @@
 .hero {
-  position: relative;
-  padding-top: clamp(48px, 9vw, 96px);
-  padding-bottom: clamp(56px, 9vw, 110px);
-  background:
-    radial-gradient(
-      120% 90% at 50% -10%,
-      var(--accent-soft),
-      transparent 55%
-    );
-}
-
-.hero__inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: clamp(18px, 2.4vw, 26px);
+  gap: clamp(32px, 5vw, 40px);
 }
 
-.hero__eyebrow {
-  margin-bottom: 2px;
+.hero__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .hero__names {
-  font-size: var(--fs-display);
-  line-height: 1.02;
-  letter-spacing: 0.005em;
+  font-size: clamp(64px, 13vw, 130px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
   color: var(--ink);
 }
-.hero__amp {
-  font-style: italic;
-  color: var(--accent);
-  padding-inline: 0.06em;
-}
 
-.hero__meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
+.hero__date {
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   color: var(--ink-soft);
-}
-.hero__dot {
-  color: var(--accent);
 }
 
 /* Matted, shadowed frame */
 .hero__frame {
-  margin: clamp(8px, 2vw, 20px) 0 0;
+  margin: 0;
   background: var(--surface);
-  padding: clamp(10px, 1.6vw, 18px);
+  padding: clamp(16px, 4vw, 45px);
+  max-width: 720px;
   width: 100%;
-  max-width: 920px;
-  box-shadow: var(--shadow-soft);
+  box-shadow:
+    0px 96px 96px -32px rgba(51, 51, 51, 0.06),
+    0px 48px 48px -24px rgba(51, 51, 51, 0.04),
+    0px 24px 24px -12px rgba(51, 51, 51, 0.04),
+    0px 12px 12px -6px rgba(51, 51, 51, 0.04),
+    0px 1px 1px 0.5px rgba(51, 51, 51, 0.04),
+    0px 0px 0px 1px rgba(51, 51, 51, 0.04);
 }
+
 .hero__frame img {
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
   object-fit: cover;
-}
-
-.hero__scroll {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  margin-top: clamp(8px, 2vw, 18px);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--ink-muted);
-  transition: color 0.2s ease;
-}
-.hero__scroll:hover {
-  color: var(--accent);
-}
-.hero__scroll svg {
-  animation: hero-bob 1.8s ease-in-out infinite;
-}
-@keyframes hero-bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__scroll svg {
-    animation: none;
-  }
 }
