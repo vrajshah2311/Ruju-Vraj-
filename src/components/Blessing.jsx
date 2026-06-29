@@ -31,7 +31,7 @@ export default function Blessing() {
 
         <div className="bless__messages">
           <p className="bless__guj">
-            અમે આપના અપાર પ્રેમ અને સહયોગ માટે હૃદયપૂર્વક આભારી છીએ. થાઇલેન્ડમાં
+            અમે આપના અપાર પ્રેમ અને સહયોગ માટે હૃદયપૂર્વક આભારી છીએ. વડોદરામાં
             અમારી પ્રિય પરિવારજનો ની ઉપસ્થિતિમાં અમારું લગ્નોત્સવ આનંદપૂર્વક ઉજવવા
             જઈ રહ્યા છીએ. આ શુભ પ્રસંગે આપના આશીર્વાદ અને શુભેચ્છાઓ અમારા માટે
             સર્વોચ્ચ અને અમૂલ્ય ભેટ સમાન છે.
@@ -39,7 +39,7 @@ export default function Blessing() {
 
           <p className="bless__en">
             We&apos;re truly grateful for your love and support. Our wedding
-            celebration will be held in Thailand with our closest family. Your
+            celebration will be held in Vadodara with our closest family. Your
             blessings and wishes are the most precious gift to us.
           </p>
         </div>

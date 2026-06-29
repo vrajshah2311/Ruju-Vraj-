@@ -12,27 +12,27 @@ export default function OurStory() {
           </div>
 
           <p className="story__sub serif-display">
-            Two families, one beautiful new beginning.
+            A chance meeting, and a few beautiful years later...
           </p>
 
           <p className="lead">
-            What began as a quiet introduction between our families grew into a
-            friendship, and then into something neither of us could imagine
-            living without. Through long conversations, shared traditions, and
-            countless cups of chai, we found our home in one another.
+            What started as a simple introduction slowly became something
+            neither of us could imagine living without — built on long
+            conversations, shared laughter, and a friendship that grew into
+            love.
           </p>
 
           <p className="lead">
-            With the blessings of our parents and elders, we are overjoyed to
-            begin this next chapter together — and we can&apos;t imagine
-            celebrating it without you by our side.
+            One quiet moment, one question, and an easy &quot;yes.&quot; Now
+            we&apos;re getting married, and we can&apos;t imagine celebrating
+            without you.
           </p>
         </div>
 
         <figure className="story__media">
           <img
             src="https://placehold.co/600x735?text=Our+Story"
-            alt="Ruju and Vraj together"
+            alt="The couple together"
             width="600"
             height="735"
             loading="lazy"

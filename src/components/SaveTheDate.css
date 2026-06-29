@@ -3,30 +3,47 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  gap: 34px;
+}
+
+.std__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 28px;
+  max-width: 500px;
 }
 
 .std__title {
-  font-size: clamp(44px, 7vw, 61px);
+  font-size: clamp(44px, 7vw, 60px);
+  line-height: 1;
+  color: #000;
 }
 
 .std__intro {
-  max-width: 540px;
+  font-family: var(--inter);
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.std__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
 }
 
 .std__details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
-
-.std__when {
-  font-size: 18px;
-  color: var(--ink);
-}
-
+.std__when,
 .std__where {
-  font-size: clamp(20px, 3vw, 24px);
+  font-family: var(--inter);
+  font-size: 18px;
+  line-height: 1.33;
   color: var(--ink);
 }

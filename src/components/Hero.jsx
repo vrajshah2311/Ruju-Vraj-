@@ -3,20 +3,20 @@ import "./Hero.css";
 export default function Hero() {
   return (
     <section className="hero section" id="top">
-      <div className="hero__head">
-        <h1 className="hero__names serif-display">Ruju &amp; Vraj</h1>
-        <p className="hero__date">February 11, 2026</p>
-      </div>
-
-      <figure className="hero__frame">
+      <figure className="hero__photo">
         <img
-          src="https://placehold.co/630x767?text=Ruju+%26+Vraj"
+          src="https://placehold.co/441x537?text=Ruju+%26+Vraj"
           alt="Ruju and Vraj"
-          width="630"
-          height="767"
+          width="441"
+          height="537"
           loading="eager"
         />
       </figure>
+
+      <div className="hero__head">
+        <h1 className="hero__names serif-display">Ruju &amp; Vraj</h1>
+        <p className="hero__date">February 11, 2027</p>
+      </div>
     </section>
   );
 }

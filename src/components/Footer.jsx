@@ -25,7 +25,7 @@ export default function Footer() {
       </div>
 
       <div className="container footer__meta">
-        <p>Ruju &amp; Vraj · February 11, 2026 · Thailand</p>
+        <p>Ruju &amp; Vraj · February 11, 2027 · Vadodara, India</p>
       </div>
     </footer>
   );
